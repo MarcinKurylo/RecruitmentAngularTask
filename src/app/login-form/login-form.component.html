@@ -1,7 +1,11 @@
 <form (ngSubmit) = "login()" #loginForm = "ngForm">
-    <label for="user-name"></label>
-    <input type="email" name="user-email" id="user-email" placeholder="Enter your email"  ngModel email required>
-    <label for="user-email"></label>
-    <input type="password" name="user-password" id="user-password" placeholder="Enter your password" ngModel required>
+    <div class="form-grp">
+        <label for="user-email">Email</label>
+        <input type="email" name="user-email" id="user-email" placeholder="Enter your email"  ngModel email required>
+    </div>
+    <div class="form-grp">
+        <label for="user-password">Password</label>
+        <input type="password" name="user-password" id="user-password" placeholder="Enter your password" ngModel required>
+    </div>
     <button type="submit" [disabled] = "loginForm.invalid">Sign in!</button>
 </form>

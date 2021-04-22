@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-col);
+    color: var(--txt-col);
+    background: rgb(44,50,68);
+    background: linear-gradient(157deg, rgba(44,50,68,1) 25%, rgba(77,41,41,1) 76%, rgba(0,0,0,1) 100%);
+    color: white;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    flex-wrap: wrap;
+}
+li{
+    border-bottom: 1px solid white;
+}
