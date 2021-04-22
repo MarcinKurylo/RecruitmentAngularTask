@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DatabaseService } from '../database/database.service';
+import { User } from '../user/user.model';
 
 @Component({
   selector: 'app-login-form',
@@ -21,6 +22,7 @@ export class LoginFormComponent implements OnInit {
       const email = this.loginForm.value["user-email"]
       const password = this.loginForm.value["user-password"]
       this.databaseService.login(email, password).subscribe(resData => {
+        // this.databaseService.currentUser = new User(resData.)
         console.log(resData)
       })
       this.loginForm.reset()

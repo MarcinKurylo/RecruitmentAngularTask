@@ -20,7 +20,8 @@ export class RegisterFormComponent implements OnInit {
     if (this.registerForm.valid){
       const email = this.registerForm.value["user-email"]
       const password = this.registerForm.value["user-password"]
-      this.databaseService.signUp(email, password).subscribe(resData => {
+      const username = this.registerForm.value["user-name"]
+      this.databaseService.signUp(email, password, username).subscribe(resData => {
         console.log(resData)
       })
       this.registerForm.reset()
