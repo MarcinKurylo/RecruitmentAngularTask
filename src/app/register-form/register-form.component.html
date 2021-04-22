@@ -2,6 +2,8 @@
     <label for="user-name"></label>
     <input type="text" name="user-name" id="user-name" placeholder="Enter your username"  ngModel required>
     <label for="user-password"></label>
+    <input type="email" name="user-email" id="user-email" placeholder="Enter your email"  ngModel email required>
+    <label for="user-email"></label>
     <input type="password" name="user-password" id="user-password" placeholder="Enter your password" ngModel required>
     <button type="submit" [disabled] = "registerForm.invalid">Sign up!</button>
 </form>
