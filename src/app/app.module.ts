@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     AppComponent,
     NavbarComponent,
     LoginFormComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    WelcomePageComponent
   ],
   imports: [
     BrowserModule,

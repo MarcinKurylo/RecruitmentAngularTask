@@ -22,7 +22,8 @@ export class LoginFormComponent implements OnInit {
       const email = this.loginForm.value["user-email"]
       const password = this.loginForm.value["user-password"]
       this.databaseService.login(email, password).subscribe(resData => {
-        console.log(resData.displayName)
+        this.databaseService.currentUser = new User(resData.email, resData.displayName, resData.idToken)
+        this.router.navigate(['/welcome'])
       })
       this.loginForm.reset()
     }
