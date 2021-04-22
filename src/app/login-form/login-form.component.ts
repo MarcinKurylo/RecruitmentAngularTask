@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DatabaseService } from '../database/database.service';
 
 @Component({
   selector: 'app-login-form',
@@ -11,13 +12,18 @@ export class LoginFormComponent implements OnInit {
   @ViewChild("loginForm")
   loginForm! : NgForm
 
-  constructor(private router : Router) { }
+  constructor(private router : Router, private databaseService : DatabaseService) { }
 
   ngOnInit(): void {
   }
   login(){
     if (this.loginForm.valid){
-      console.log(this.loginForm.value)
+      const email = this.loginForm.value["user-email"]
+      const password = this.loginForm.value["user-password"]
+      this.databaseService.login(email, password).subscribe(resData => {
+        console.log(resData)
+      })
+      this.loginForm.reset()
     }
   }
 
