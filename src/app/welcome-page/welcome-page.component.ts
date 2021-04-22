@@ -8,7 +8,7 @@ import { DatabaseService } from '../database/database.service';
 })
 export class WelcomePageComponent implements OnInit {
 
-  private username = this.databaseService.currentUsername
+  public username = this.databaseService.currentUsername
 
   constructor(private databaseService : DatabaseService) {}
 

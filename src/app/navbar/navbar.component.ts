@@ -9,7 +9,7 @@ import { DatabaseService } from '../database/database.service';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
 
-  private isAuthenticated : boolean | undefined
+  public isAuthenticated : boolean | undefined
   private userSub! : Subscription
 
 
