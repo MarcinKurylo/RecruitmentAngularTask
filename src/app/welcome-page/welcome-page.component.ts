@@ -8,9 +8,9 @@ import { DatabaseService } from '../database/database.service';
 })
 export class WelcomePageComponent implements OnInit {
 
-  username = this.databaseService.currentUser?.username ?? "Undefined"
+  username = this.databaseService.currentUsername
 
-  constructor( private databaseService : DatabaseService ) {}
+  constructor(private databaseService : DatabaseService) {}
 
   ngOnInit(): void {
   }

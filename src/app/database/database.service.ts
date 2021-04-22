@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from '../user/user.model';
+import { Observable, Subject } from 'rxjs';
 
 interface responseData {
   displayName : string,
@@ -18,7 +18,8 @@ interface responseData {
 })
 export class DatabaseService {
 
-  currentUser : User | undefined
+  currentUsername : string | undefined = localStorage.getItem("username") ?? undefined
+  userName = new Subject<string>()
 
   constructor(private http : HttpClient) { }
 
@@ -36,5 +37,9 @@ export class DatabaseService {
       password : password,
       returnSecureToken : true
     })
+  }
+  logout(){
+    localStorage.clear()
+    this.userName.next(undefined)
   }
 }

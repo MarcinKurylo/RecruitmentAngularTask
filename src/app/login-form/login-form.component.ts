@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DatabaseService } from '../database/database.service';
-import { User } from '../user/user.model';
 
 @Component({
   selector: 'app-login-form',
@@ -22,7 +21,10 @@ export class LoginFormComponent implements OnInit {
       const email = this.loginForm.value["user-email"]
       const password = this.loginForm.value["user-password"]
       this.databaseService.login(email, password).subscribe(resData => {
-        this.databaseService.currentUser = new User(resData.email, resData.displayName, resData.idToken)
+        localStorage.setItem("userToken", resData.idToken)
+        localStorage.setItem("username", resData.displayName)
+        this.databaseService.currentUsername = localStorage.getItem("username") ?? undefined
+        this.databaseService.userName.next(this.databaseService.currentUsername)
         this.router.navigate(['/welcome'])
       })
       this.loginForm.reset()

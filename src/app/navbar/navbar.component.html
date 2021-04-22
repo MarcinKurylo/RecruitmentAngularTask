@@ -2,6 +2,7 @@
     <ul>
         <li id="logo"><a [routerLink]="['/']" routerLinkActive="router-link-active">Recruitment task</a></li>
         <li><a [routerLink]="['/register']" routerLinkActive="router-link-active">Register</a></li>
-        <li><a [routerLink]="['/login']" routerLinkActive="router-link-active">Log in</a></li>
+        <li *ngIf="!isAuthenticated"><a [routerLink]="['/login']" routerLinkActive="router-link-active">Log in</a></li>
+        <li *ngIf="isAuthenticated"><a [routerLink]="['/']" routerLinkActive="router-link-active" (click)="logout()">Log out</a></li>
     </ul>
 </nav>
