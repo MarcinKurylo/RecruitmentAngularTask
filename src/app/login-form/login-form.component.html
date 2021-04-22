@@ -1,1 +1,7 @@
-<p>login-form works!</p>
+<form (ngSubmit) = "login()" #loginForm = "ngForm">
+    <label for="user-name"></label>
+    <input type="text" name="user-name" id="user-name" placeholder="Enter your username"  ngModel required>
+    <label for="user-password"></label>
+    <input type="password" name="user-password" id="user-password" placeholder="Enter your password" ngModel required>
+    <button type="submit" [disabled] = "loginForm.invalid">Sign in!</button>
+</form>

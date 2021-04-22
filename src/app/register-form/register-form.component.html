@@ -1,1 +1,7 @@
-<p>register-form works!</p>
+<form (ngSubmit) = "addUser()" #registerForm = "ngForm">
+    <label for="user-name"></label>
+    <input type="text" name="user-name" id="user-name" placeholder="Enter your username"  ngModel required>
+    <label for="user-password"></label>
+    <input type="password" name="user-password" id="user-password" placeholder="Enter your password" ngModel required>
+    <button type="submit" [disabled] = "registerForm.invalid">Sign up!</button>
+</form>
