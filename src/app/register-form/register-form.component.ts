@@ -10,7 +10,7 @@ import { DatabaseService } from '../database/database.service';
 })
 export class RegisterFormComponent implements OnInit {
   @ViewChild("registerForm")
-  registerForm! : NgForm
+  private registerForm! : NgForm
 
   constructor(private router : Router, private databaseService : DatabaseService) { }
 
