@@ -1,4 +1,4 @@
-<form (ngSubmit) = "addUser()" #registerForm = "ngForm">
+<!-- <form (ngSubmit) = "addUser()" #registerForm = "ngForm">
     <div class="form-grp">
         <label for="user-name">Username</label>
         <input type="text" name="user-name" id="user-name" placeholder="Enter your username"  ngModel required>
@@ -12,4 +12,20 @@
         <input type="password" name="user-password" id="user-password" placeholder="Enter your password" ngModel required>
     </div>
     <button type="submit" [disabled] = "registerForm.invalid">Sign up!</button>
-</form>
+</form> -->
+
+<Form [formGroup]="registerForm" (ngSubmit)="addUser()">
+    <div class="form-grp">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" id="username" name="username" placeholder="Enter your username" required>
+    </div>
+    <div class="form-grp">
+        <label for="userEmail">Email</label>
+        <input type="email" formControlName="userEmail" id="userEmail" name="userEmail" placeholder="Enter your Email" required>
+    </div>
+    <div class="form-grp">
+        <label for="userPassword">Password</label>
+        <input type="password" formControlName="userPassword" id="userPassword" name="userPassword" placeholder="Enter your password" required>
+    </div>
+    <button type="submit" [disabled] = "registerForm.invalid">Sign up!</button>
+</Form>
