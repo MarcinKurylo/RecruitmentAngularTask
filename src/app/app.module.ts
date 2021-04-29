@@ -9,6 +9,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormlyModule.forRoot({ extras: { lazyRender: true } }),
+    FormlyBootstrapModule
   ],
   providers: [],
   bootstrap: [AppComponent]
