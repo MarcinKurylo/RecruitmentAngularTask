@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DatabaseService } from '../database/database.service';
 
@@ -11,9 +11,9 @@ import { DatabaseService } from '../database/database.service';
 export class RegisterFormComponent implements OnInit {
 
   registerForm = new FormGroup({
-    username : new FormControl(""),
-    userEmail : new FormControl(""),
-    userPassword : new FormControl("")
+    username : new FormControl("", Validators.required),
+    userEmail : new FormControl("", [Validators.required, Validators.email]),
+    userPassword : new FormControl("", Validators.required)
   })
   
 
